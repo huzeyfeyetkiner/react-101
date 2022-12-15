@@ -5,7 +5,7 @@
   "main": "test.js",
   "type": "module",
   "scripts": {
-    "start": "node test"
+    "start": "node deneme"
   },
   "author": "",
   "license": "ISC",
