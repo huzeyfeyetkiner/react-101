@@ -1,7 +1,6 @@
 {
   "name": "learning-node",
   "version": "1.0.0",
-  "description": "",
   "main": "test.js",
   "type": "module",
   "scripts": {
@@ -13,5 +12,15 @@
     "axios": "^1.2.1",
     "node-fetch": "^3.3.0",
     "slugify": "^1.6.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huzeyfeyetkiner/react-101.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huzeyfeyetkiner/react-101/issues"
+  },
+  "homepage": "https://github.com/huzeyfeyetkiner/react-101#readme",
+  "description": ""
 }
