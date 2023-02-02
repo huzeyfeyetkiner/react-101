@@ -1,0 +1,16 @@
+{
+  "name": "basic-node",
+  "version": "1.0.0",
+  "description": "basic node project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  }
+}
