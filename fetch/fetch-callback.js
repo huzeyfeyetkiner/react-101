@@ -1,6 +1,10 @@
 import fetch from "node-fetch"
 
 
+
+
+
+
 // fetch("https://jsonplaceholder.typicode.com/users")
 // .then((data) => data.json())
 // .then((user) => {
@@ -57,3 +61,6 @@ import fetch from "node-fetch"
     console.log("Post 1 yüklendi",post1);
     console.log("Post 2 yüklendi",post2);
 })();
+
+
+// fetch işleminden bize bir promise dönüyor .json ile promise yapısını json veri tipine dönüştürüp obje şekline getiriyoruz ve ondan sonra ekrana yazıdırıyoruz.
