@@ -36,7 +36,8 @@ console.log(findItem);
 // filter -> şartı sağlayan tüm elemanları döndürür
 const filtered = users.filter(item => item.age>21)
 console.log(filtered)
-
+const filtered2 = users.filter(({name, age}) => age>21 && name == "Huzeyfe")
+console.log("filtered,",filtered2);
 
 // some -> şartı sağlayan herhangi bir element olması durumunda true olmaması durumunda false döndürür
 const someFunc = users.some(item => item.age ===23)
