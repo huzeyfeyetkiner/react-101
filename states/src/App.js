@@ -1,7 +1,7 @@
 import './App.css';
 
 import { useState } from 'react';
-import { ListGroup } from 'react-bootstrap';
+import Counter  from "./components/counter.js"
 
 // function setAgeParam(num){
 //   return num += 1
@@ -47,8 +47,9 @@ function App() {
 
       <div>{address.title} - {address.zip} {address.province}</div>
       <button onClick={() => setAddress({...address, title: "Ankara"})}>Change Adress</button>
-      
+
       <button onClick={() => setAddress({...address, province:"Eyüp"})}>Add something</button>
+
 
 
     </>
