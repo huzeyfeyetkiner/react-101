@@ -15,12 +15,13 @@ function Header({name, surName, age, address}){
 
 export default Header
 
-Header.propTypes = {
-    name: propTypes.string,
-    surName: propTypes.string,
-    age: propTypes.oneOfType([propTypes.string, propTypes.number]),
-    address: propTypes.shape({
-        title: propTypes.string,
-        zip: propTypes.oneOfType([propTypes.string,propTypes.number])
-    })
-}
+// Header.propTypes = {
+    
+//     name: propTypes.string,
+//     surName: propTypes.string,
+//     age: propTypes.oneOfType([propTypes.string, propTypes.number]),
+//     address: propTypes.shape({
+//         title: propTypes.string,
+//         zip: propTypes.oneOfType([propTypes.string,propTypes.number])
+//     })
+// }
