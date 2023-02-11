@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 // useState hook'nda olduğu gibi useEffect hook da react ile çağrılır.
 
+import Counter from "./components/counter";
+
 function App() {
 
+  const [isVisible, setIsVisible] = useState(true)
   const [num, setNum] = useState(0)
   const [name, setName] = useState("Huzeyfe")
 
@@ -23,7 +26,6 @@ function App() {
     console.log("Both rendered");
   },[]) // dependencie array parameter olarak " [] " gönderdiğimizde componentin ilk render işleminde içerideki fonksiyon çalışır
 
-
   return (
     <div className="App">
       <h1>{num}</h1>
@@ -34,6 +36,14 @@ function App() {
 
       <h1>{name}</h1>
       <button onClick={() => {setName("Yetkiner")}}>Change</button>
+
+
+      <hr />
+
+      <h1>Component Unmount / useEffect</h1>
+
+      {isVisible && <Counter />}
+      <button onClick={() => setIsVisible(!isVisible)}>Hide component</button>
 
     </div>
   );
