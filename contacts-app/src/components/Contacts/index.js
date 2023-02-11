@@ -16,7 +16,7 @@ function Contacts(){
         <>
 
             <div>Contacts</div>
-            <List />
+            <List contacts= {contacts}/>
             <Form contacts={contacts} addContacts={setContacts}/>
 
         </>
