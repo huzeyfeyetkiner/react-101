@@ -19,8 +19,11 @@ function List({contacts}) {
 
         <input value={searchText} type="text" onChange={(e) => setSearchText(e.target.value)} placeholder="Ara"/>
 
-        <ul>
-          {filtered.map((contact,id) => <li key={id}>{contact.fullName} - {contact.phoneNumber}</li>)}
+        <ul className="list">
+          {filtered.map((contact,id) => <li key={id}>
+            <span>{contact.fullName}</span>
+            <span>{contact.phoneNumber}</span>
+            </li>)}
         </ul>
       </>
   )

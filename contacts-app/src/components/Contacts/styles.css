@@ -1,0 +1,28 @@
+.container {
+    width: 400px;
+    background-color:aliceblue;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+}
+
+.list > li {
+    background-color: antiquewhite;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 3px;
+}
