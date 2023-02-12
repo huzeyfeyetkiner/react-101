@@ -25,6 +25,8 @@ function List({contacts}) {
             <span>{contact.phoneNumber}</span>
             </li>)}
         </ul>
+
+        <p className="total-contacts">Total contacts({filtered.length})</p>
       </>
   )
 }

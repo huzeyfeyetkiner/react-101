@@ -32,3 +32,7 @@ button {
     width: 40%;
     background-color:burlywood;
 }
+
+.total-contacts {
+    font-style: italic;
+}
