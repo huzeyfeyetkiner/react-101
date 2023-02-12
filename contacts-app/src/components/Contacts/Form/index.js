@@ -1,40 +1,32 @@
-import {useState} from "react"
+import { useState, useEffect } from "react"
 
-function Form({contacts, addContacts}) {    
 
-    const [form, setForm] = useState({fullName:"", phone:""})
+function Form({contacts, setContacts}) {
+  
+  const [contact, setContact] = useState({fullName:"", phoneNumber:""})
 
-    const onChangeInput = (e) => {
-        setForm({...form,[e.target.name]:e.target.value})
-    }
+  function formSubmit(e){
+    e.preventDefault()    
 
-    const onFormSubmit = (e) => {
-        e.preventDefault();
+    setContacts([...contacts, contact])
+    // console.log(contact);
+  }
 
-        if(form.fullName === "" || form.phone === ""){
-            console.log("Değer gir");
-            return false;
-        }        
-        addContacts([...contacts, form])
 
-        setForm({fullName:"", phone:""})
-    }
+  function inputChange(e){
+    setContact({...contact, [e.target.name]:e.target.value})
+  }
 
-  return (   
-    <form onSubmit={onFormSubmit}>
-        <div>
-            <input name="fullName" type="text" value={form.fullName} placeholder="Name" onChange={onChangeInput}/>
-        </div>
+  return (    
 
-        <div>
-            <input name="phone" type="text" value={form.phone} placeholder="Phone Number" onChange={onChangeInput}/>
-        </div>
+    <form onSubmit={formSubmit}>    
+      <input name="fullName" onChange={inputChange} type="text" placeholder="Name" required/> <br />
+      <input name="phoneNumber" onChange={inputChange} type="text" placeholder="Phone Number" required/> <br />
 
-        <div>
-            <button>Add</button>
-        </div>        
-    </form> 
+      <button>Add</button>
     
+    </form>
   )
+
 }
 export default Form
