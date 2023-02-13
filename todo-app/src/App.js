@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="todoapp">
       <h1>todos</h1>
-      <Header />
+      <Header todos={todos} setTodos={setTodos} />
       <Main filter={filter} todos={todos} setTodos={setTodos}/>
       <Footer filter={filter} setFilter={setFilter} todos={todos} setTodos={setTodos}/>
     </div>
