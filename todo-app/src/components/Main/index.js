@@ -1,16 +1,15 @@
 function Main({filter, todos, setTodos}) {
   return (
 
-
     <div className="main">
-      <input className="toggle-all" type="checkbox" name="" id="" />
-
       
         <ul className="todo-list">
         {
+          // prop olarak alınan filter state'i içerisindeki değere göre liste elemanlarını sıralamak istiyoruz.
+          // filter all olduğu sürece tamamlanmış olsun olmasın tüm görevler listelenecek
           todos.map((todo,index) => {
-            if(filter === "All"){
-              if(todo.completed == false){
+            if(filter === "All"){ // tüm görevlerin listelenmesi için
+              if(todo.completed == false){ // tamamlanmamış görevlerin renderında checkbox işaretsiz ve label içerisindeki yazı normal gözükecek
                 return(
                   <li key={index}>
                     <div className="view">
@@ -28,7 +27,7 @@ function Main({filter, todos, setTodos}) {
                     </div>
                   </li>
                 )
-              }else{
+              }else{ // tamamlanmış görevlerin renderında checkbox işaretli ve label içerisindeki yazıya line-through uygulanmış şekilde gözükecek
                 return(
                   <li className="completed" key={index}>
                     <div className="view">
@@ -47,7 +46,7 @@ function Main({filter, todos, setTodos}) {
                   </li>
                 )
               }
-            }else if(filter ==="Active"){
+            }else if(filter ==="Active"){ // tamamlanmamış, aktif görevlerin listelenmesi için
               if(todo.completed === false){
                 return(
                   <li key={index}>
@@ -67,7 +66,7 @@ function Main({filter, todos, setTodos}) {
                   </li>
                 )
               }
-            }else{
+            }else{ // tamamlanmış görevlerin listelenmesi için
               if(todo.completed == true){
                 return(
                   <li className="completed" key={index}>

@@ -8,13 +8,16 @@ import './App.css';
 
 function App() {
 
+  // aşağıdaki all,active ve completed filtre butonlarının işlevleri için kullanılan state
   const [filter, setFilter] = useState("All")
 
+  // program açılışında varsayılan olarak bulunan görevler
   const [todos,setTodos] = useState([
     { completed: true, task: "Learn HTML" },
     { completed: true, task: "Learn BOOTSTRAP" },
     { completed: false, task: "Learn REACT" },
   ])
+
 
   return (
     <div className="todoapp">

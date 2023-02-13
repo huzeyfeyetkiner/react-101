@@ -3,6 +3,7 @@ import {useState, useEffect} from "react"
 
 function Footer({todos, setTodos, filter, setFilter}) {
 
+  // tamamlanmamış görevleri sayan sayaç için kullanılan state
   const [len, setLen] = useState(0)
 
   // tamamlanmamış görev sayısı değiştiğinde sayacı değiştirmek için
@@ -24,6 +25,7 @@ function Footer({todos, setTodos, filter, setFilter}) {
     setFilter(e.target.name)
   }
 
+  // tamamlanmış görevlerin hepsini silmek için kullanılan fonksiyon
   const clearAll = () => {
     const newArray = todos.filter((todo) => todo.completed == false)
     setTodos(newArray)
@@ -32,8 +34,10 @@ function Footer({todos, setTodos, filter, setFilter}) {
   return (
     <div className="footer">
 
+      {/* aktif görevlerin sayısını gösteren span */}
       <span className="todo-count">{len} item left</span>
 
+      {/* filtreleme işlemlerini sağlayan butonlar, className kısmındaki ternary operator filtre seçildiğindeki stillerin seçilen a etiketine uygulanması için */}
       <ul className="filters">
         <li>
           <a name="All" href="#" onClick={filterList} className={filter === "All" ? "selected":""}>All</a>
