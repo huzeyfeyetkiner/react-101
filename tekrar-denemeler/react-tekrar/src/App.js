@@ -5,6 +5,12 @@ import InputEx from './components/input-ex.jsx';
 import Count from './components/state.jsx';
 import Content from './components/array-object-state';
 import CopyInputArea from './components/input-state';
+
+// module css örneği için
+import A from './components/module_css/A';
+import B from './components/module_css/B';
+
+
 const address = {
   title: "Istanbul", 
   zip:34050
@@ -26,6 +32,9 @@ function App() {
 
       <hr />
       <CopyInputArea />
+
+      <A />
+      <B />
     </>
    
   );
