@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-main{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);  
+  padding: 15px;
+  background-color: #F1DEDC;
+  max-width: 640px;
+  min-width: 360px;
+  margin-top: 20%;
+}
+
+.input-area form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  
+}
+
+.task-input {
+  width: 120%;
+  padding: 10px;
+}
+
+.input-area > button {
+  width: 20%;
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+}
+
+.list > ul {
+  list-style-type: none;
+  margin: 10px 0px;
+  padding: 0;
+}
+
+.list ul li {
+  margin-bottom: 2px;  
+  padding: 0px 40px;
+}
+
+.inside-li {
+  display: flex;
+  width: 640px;
+  max-width:640px;
+  min-width: 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  /* padding: 0px 10px; */
+}
+
+.completed p {
+  text-decoration: line-through;
+}
+
+.close-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color:red;
+  margin: 0px 0px 0px auto;
+}
+
+.inside-li:hover .close-btn{
+  display: block;
+}
+
+
+
