@@ -14,22 +14,56 @@ body {
   margin-top: 20%;
 }
 
-.input-area form {
+
+.todo-main > h1 {
+  opacity: 0.7;
+  text-align: center;
+  font-style: italic;
+}
+
+.input-area {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  
+  width: 100%;  
+}
+
+.input-area form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;  
 }
 
 .task-input {
-  width: 120%;
+  width: 70%;
   padding: 10px;
 }
 
+.task-input:focus {
+  outline: none;
+}
+
+.task-input::placeholder{
+  font-style: italic;
+}
+
 .input-area > button {
-  width: 20%;
+  cursor: pointer;
+  margin-left: 1%;
+  width: 25%;
+  padding: 10px;
+  opacity: 0.7;
+  background-color: #FF858D;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);  
+}
+
+.input-area > button:hover {
+  opacity: 1;
+  background-color: #FF858D;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);  
 }
 
 .list{
@@ -61,6 +95,13 @@ body {
 
 .completed p {
   text-decoration: line-through;
+  transition: 1s ease-in;
+
+}
+
+.completed {
+  opacity: 0.7;
+  transition: 0.5s ease-in;
 }
 
 .close-btn {
@@ -76,5 +117,40 @@ body {
   display: block;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer > ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.footer ul li {
+  margin: 0px 5px;
+}
+
+.footer ul li a{
+  text-decoration: none;
+  color: black;
+  opacity: 0.7;
+}
+
+.footer ul li a.selected {
+  opacity: 1;
+}
+
+.clear-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+}
+
+.clear-btn:hover {
+  border-bottom: 1px solid black;
+}
 
 
