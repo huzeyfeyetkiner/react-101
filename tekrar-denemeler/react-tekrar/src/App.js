@@ -5,6 +5,7 @@ import InputEx from './components/input-ex.jsx';
 import Count from './components/state.jsx';
 import Content from './components/array-object-state';
 import CopyInputArea from './components/input-state';
+import Fetch from './components/fetch'
 
 // module css örneği için
 import A from './components/module_css/A';
@@ -21,8 +22,8 @@ function App() {
 
   return (   
 
-    <>
-       <Header name="Huzeyfe" surName="Yetkiner" age={23} address={address} />
+    <div className='App'>
+       {/* <Header name="Huzeyfe" surName="Yetkiner" age={23} address={address} />
 
       <InputEx />    
 
@@ -34,8 +35,10 @@ function App() {
       <CopyInputArea />
 
       <A />
-      <B />
-    </>
+      <B /> */}
+
+      <Fetch />
+    </div>
    
   );
 }
