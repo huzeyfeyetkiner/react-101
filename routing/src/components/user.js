@@ -5,16 +5,20 @@ import axios from "axios"
 
 function User() {
 
-const [user, setUser] = useState({})
-const { id } = useParams()
+  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState({})
+  const { id } = useParams()
 
 useEffect(()=>{
     axios("https://jsonplaceholder.typicode.com/users/"+id)
         .then(resp => setUser(resp.data))
-})
+        .finally(()=> {
+          setLoading(false)
+        })
+}, [id])
 
   return (
-    <div>
+    <>
         <nav>
             <Link to="/">Home</Link> {" "}
             <Link to="/about">About</Link> {" "}
@@ -23,8 +27,15 @@ useEffect(()=>{
 
 
         <h1>User Details</h1>
-        <code>{JSON.stringify(user)}</code>
-    </div>
+        { loading && <h4>Loading...</h4> }
+        { !loading && <div>
+          <h4>{user.name}</h4>
+          <p>{user.email}</p>
+          <Link to={`/user/${parseInt(user.id) + 1}`}>Next User({parseInt(user.id) + 1})</Link>
+        </div> }
+        
+        
+    </>
   )
 }
 export default User

@@ -5,14 +5,15 @@ import axios from "axios"
 
 function User() {
 
-
+  const [loading, setLoading] = useState(true)
   const [users, setUsers] = useState([])
-
-
 
   useEffect(()=> {
     axios("https://jsonplaceholder.typicode.com/users")
-      .then(response => setUsers(response.data))    
+      .then(response => setUsers(response.data))
+      .finally(()=> {
+        setLoading(false)
+      })    
   },[])
 
   return (
@@ -26,6 +27,7 @@ function User() {
       <h2>Users</h2>
 
       <ul>
+        {loading && <h4>Loading...</h4>}
         {
           users.map((user) => <li style={{listStyleType:"none"}} key={user.id}>
             
