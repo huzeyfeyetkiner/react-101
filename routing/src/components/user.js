@@ -19,7 +19,9 @@ useEffect(()=>{
 
   return (
     <>
+        
         <h1>User Details</h1>
+        
         { loading && <h4>Loading...</h4> }
         { !loading && <div>
           <h4>{user.name}</h4>
