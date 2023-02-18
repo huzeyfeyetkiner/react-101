@@ -18,11 +18,6 @@ function User() {
 
   return (
     <div>
-        <nav>
-          <Link to="/">Home</Link> {" "}
-          <Link to="/about">About</Link> {" "}
-          <Link to="/users">Users</Link>
-        </nav>
         
       <h2>Users</h2>
 
@@ -40,6 +35,7 @@ function User() {
 
       <div className="userLayout" style={{display:"inline-block", padding:"15px"}}>
         <Outlet />
+        {/* bu etiket user componentinin renderlanacağı yeri gösteriyor */}
       </div>
 
     </div>
