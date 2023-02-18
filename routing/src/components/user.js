@@ -19,19 +19,12 @@ useEffect(()=>{
 
   return (
     <>
-        <nav>
-            <Link to="/">Home</Link> {" "}
-            <Link to="/about">About</Link> {" "}
-            <Link to="/users">Users</Link>
-        </nav>
-
-
         <h1>User Details</h1>
         { loading && <h4>Loading...</h4> }
         { !loading && <div>
           <h4>{user.name}</h4>
           <p>{user.email}</p>
-          <Link to={`/user/${parseInt(user.id) + 1}`}>Next User({parseInt(user.id) + 1})</Link>
+          <Link to={`/users/${parseInt(user.id) + 1}`}>Next User({parseInt(user.id) + 1})</Link>
         </div> }
         
         

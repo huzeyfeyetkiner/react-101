@@ -1,4 +1,4 @@
-import './App.css';
+
 import Home from "./components/home.js"
 import About from "./components/about.js"
 import Users from "./components/users"
@@ -13,8 +13,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="users" element={<Users />} />
-          <Route path="user/:id" element={<User />} />
+          <Route path="users" element={<Users />} >
+            <Route path=":id" element={<User />} />
+          </Route>
+          
 
         </Routes>
     </div>

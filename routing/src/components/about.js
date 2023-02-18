@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 function About() {
     return (
       <>
+        <nav>
+            <Link to="/">Home</Link> {" "}
+            <Link to="/about">About</Link> {" "}
+            <Link to="/users">Users</Link>
+        </nav>
         <main>
           <h2>Who are we?</h2>
           <p>
@@ -12,11 +17,7 @@ function About() {
             think?
           </p>
         </main>
-        <nav>
-            <Link to="/">Home</Link> {" "}
-            <Link to="/about">About</Link> {" "}
-            <Link to="/users">Users</Link>
-        </nav>
+        
       </>
     );
   }
