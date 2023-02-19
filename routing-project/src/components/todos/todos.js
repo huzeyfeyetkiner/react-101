@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Input from "./input"
 import Footer from "./footer"
 function Todos() {
@@ -8,6 +8,13 @@ function Todos() {
   {completed:true, task:"Learn HTML"}
 ])
 
+  
+  const [todosLen, setTodosLen] = useState(todos.length)
+
+  useEffect(()=> {
+    setTodosLen(todos.length)
+  }, [todos])
+  
   return (
     
     <div className="todos">
@@ -19,7 +26,7 @@ function Todos() {
           <ul>
             {
               todos.map((todo,index) => {
-                if(todo.completed == false){
+                if(todo.completed === false){
                   return (
                     <li key={index}>
                       <div className="list-layout">
@@ -62,7 +69,7 @@ function Todos() {
           </ul>
         </div>
 
-        <Footer />
+        <Footer todosLen={todosLen}/>
       </div>
     </div>
     
