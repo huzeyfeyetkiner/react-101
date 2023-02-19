@@ -151,6 +151,12 @@ html {
   justify-content: center;
 }
 
+.sticky-container input {
+  padding: 1rem;
+  outline: none;
+  
+}
+
 .sticky-notes > ul {
   list-style-type: none;
   display: flex;
@@ -166,6 +172,7 @@ html {
 }
 
 .note-layout {
+  word-wrap: break-word;
   margin-top: 1rem;
   padding: 1rem;
   width: 80%;
@@ -174,6 +181,7 @@ html {
   color:#161B22;
   font-size: 1.2rem;
   font-weight: 600;
+  text-align:start;
 }
 
 .stick-del {

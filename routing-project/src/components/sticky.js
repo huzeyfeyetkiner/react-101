@@ -7,13 +7,17 @@ function Sticky() {
 
   const [note, setNote] = useState("")
 
-  console.log(note);
+  function formSubmitted(e){
+    e.preventDefault()
+    setStickyNotes([...stickyNotes, note])
+    setNote("")
+  }
   return (
     
     <div className="sticky">
       <div className="sticky-container">
-        <form action="">
-          <input type="text" name="" id="" value={note} onChange={(e) => {setNote(e.target.value)}}/>
+        <form action="" onSubmit={formSubmitted}>
+          <input type="text" name="" id="" value={note} onChange={(e) => {setNote(e.target.value)}} autoFocus/>
         </form>
         <div className="sticky-notes">
           <ul>
@@ -23,7 +27,11 @@ function Sticky() {
                   <li key={index}>
                     <div 
                     className="note-layout">
-                      <button className="stick-del">X</button>
+                      <button className="stick-del" onClick={() => {
+                        const newArray = stickyNotes;
+                        newArray.splice(index,1)
+                        setStickyNotes([...newArray])
+                      }}>X</button>
                       
                       {note}</div>
                   </li>
