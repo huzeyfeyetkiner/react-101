@@ -1,26 +1,30 @@
 import './App.css';
 // import { Formik, Form, Field } from 'formik'; Fiel yapısını kullanmak istemediğimizden yorum satırına alındı
 import { useFormik } from 'formik';
+import SignUp from './FormValidation/signup';
 
 function App() {
   // const formik = useFormik() şeklinde yazsaydık aşağıdaki handleSubmit vb yapıları şu şekilde yazmalıydık : formik.HandleSubmit
-  const{ handleSubmit, handleChange, values} = useFormik({
-    initialValues: {
-      firstName: 'Huzeyfe',
-      lastName: 'Yetkiner',
-      email: 'yetkinerhuzeyfe@gmail.com',
-      gender: 'male',
-      hobbies: [],
-      country: "Turkey",
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+  // const{ handleSubmit, handleChange, values} = useFormik({
+  //   initialValues: {
+  //     firstName: 'Huzeyfe',
+  //     lastName: 'Yetkiner',
+  //     email: 'yetkinerhuzeyfe@gmail.com',
+  //     gender: 'male',
+  //     hobbies: [],
+  //     country: "Turkey",
+  //   },
+  //   onSubmit: values => {
+  //     alert(JSON.stringify(values, null, 2));
+  //   },
+  // });
   return (
     <div className="App">
       <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+
+      <SignUp></SignUp>
+
+      {/* <form onSubmit={handleSubmit}>
               <label htmlFor="firstName">First Name</label>
               <input type="text" name='firstName' value={values.firstName} onChange={handleChange} />
 
@@ -66,7 +70,7 @@ function App() {
                 <code>{JSON.stringify(values)}</code>
               }
 
-            </form>
+            </form> */}
     </div>
   );
 }
