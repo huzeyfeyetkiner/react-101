@@ -36,6 +36,11 @@ html {
   text-decoration: none;
   color: #fff;
 }
+
+.active {
+  opacity: 0.8;
+  color: #9db5d6 !important;
+}
 /* app.js için */
 
 /* home.js için */
@@ -142,6 +147,7 @@ html {
   align-items: center;
   justify-content: center;
   color: #fff;
+  
 }
 
 .sticky-container {
@@ -149,6 +155,8 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+
 }
 
 .sticky-container input {
@@ -182,12 +190,96 @@ html {
   font-size: 1.2rem;
   font-weight: 600;
   text-align:start;
+  -webkit-box-shadow: 13px 11px 16px -11px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 11px 16px -11px rgba(0,0,0,1);
+  box-shadow: 13px 11px 16px -11px rgba(0,0,0,1);
 }
 
 .stick-del {
   background-color: transparent;
   border: none;
-  display: block;
-  float: right;
+  float:right;
+  display: inline-block;
   cursor: pointer;
+}
+
+/* contact part */
+
+.users-container {
+  padding: 8%;
+}
+
+.users{
+  list-style-type: none;
+}
+
+.users li {
+  background-color: #fff;
+  margin:0.8rem 0rem ;
+  padding: 8%;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.btn-contact {
+  display:block;
+  margin: 1rem auto 0px auto;
+  text-align: center;
+  width: 7rem;
+  background-color: #161B22;
+  color: #fff;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 3rem;
+  transition: all 0.5s ease-in;
+}
+
+.btn-contact:hover {
+  opacity: 0.7;
+}
+
+
+/* contact part */
+
+/* destkop */
+@media only screen and (min-width:800px) {
+  .app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .left-nav{
+    display: inline-block;
+    text-align: center;
+    height: 100vh;
+    width: 20%;
+    margin-right: 5%;
+  }
+
+  .todos-container {
+    padding: 50%;
+    margin-left: 160%;
+  }
+
+  .sticky-container input {
+    position: absolute;
+    width: 25%;
+    margin-left: 20%;
+  }
+
+  .sticky-notes > ul {
+    position: fixed;
+    margin-top: 5%;
+  }
+
+  .users-container {
+    padding: 3%;
+    margin-left: 20%;
+  }
+
+  .users li {
+    width: 60%;
+    padding: 1%;
+  }
+
 }

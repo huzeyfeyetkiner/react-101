@@ -2,11 +2,11 @@ import { NavLink, Outlet } from "react-router-dom"
 
 function Home() {
   return (
-    <>
+    <div className="app">
     <div className="left-nav">
         <ul>
           <li>
-            <NavLink to="/" >Todos</NavLink>
+            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/" >Todos</NavLink>
           </li>
           <li>
             <NavLink to="/Sticky">Sticky</NavLink>
@@ -16,7 +16,7 @@ function Home() {
       <div className="content">
         <Outlet></Outlet>
       </div>
-    </>
+    </div>
     
 
       

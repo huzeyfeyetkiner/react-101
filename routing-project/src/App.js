@@ -15,13 +15,13 @@ function App() {
       <div className="nav-container">
         <ul>
           <li>
-            <NavLink to="/" >Home</NavLink>
+            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/" >Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about-us">About</NavLink>
+            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/about-us">About</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/contact">Contact</NavLink>
           </li>
         </ul>
       </div>
