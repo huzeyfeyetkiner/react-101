@@ -2,7 +2,7 @@ import {useFormik} from "formik"
 import validationSchema from "./validations"
 
 function SignUp() {
-    const {handleChange, handleSubmit, values}= useFormik({
+    const {handleChange, handleSubmit, handleBlur, touched, values, errors}= useFormik({
         initialValues: {
         email: '',
         password: '',
@@ -15,31 +15,19 @@ function SignUp() {
 });    
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>            
             
-            
-            <label>Email</label>
-            <input type="email" name='email' value={values.email} onChange={handleChange}/>
+            <div>Email</div>
+            <input type="email" name='email' value={values.email} onBlur={handleBlur} onChange={handleChange}/>
+            { errors.email && touched.email && ( <div className="error">{errors.email}</div> ) }
 
-            <label>Password</label>
-            <input type="text" name='password' value={values.password} onChange={handleChange} />
+            <div>Password</div>
+            <input type="text" name='password' value={values.password} onBlur={handleBlur} onChange={handleChange} />
+            { errors.password && touched.password && ( <div className="error">{errors.password}</div> ) }
 
-            <label htmlFor="lastName">Confirm Password</label>
-            <input type="text" name='confirmPassword' value={values.confirmPassword} onChange={handleChange} />
-
-              
-
-              
-
-              <br /><br />  
-             
-
-
-              <br /><br />
-
-             
-
-              <br /><br />
+            <div htmlFor="lastName">Confirm Password</div>
+            <input type="text" name='confirmPassword' value={values.confirmPassword} onBlur={handleBlur} onChange={handleChange} />
+            { errors.confirmPassword && touched.confirmPassword && ( <div className="error">{errors.confirmPassword}</div> ) }
 
               <button type="submit">Submit</button>
               <br />
