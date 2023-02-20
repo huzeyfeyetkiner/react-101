@@ -1,11 +1,82 @@
 import './App.css';
 // import { Formik, Form, Field } from 'formik'; Fiel yapısını kullanmak istemediğimizden yorum satırına alındı
-import { Formik, Form } from 'formik';
+import { useFormik } from 'formik';
 
 function App() {
+  // const formik = useFormik() şeklinde yazsaydık aşağıdaki handleSubmit vb yapıları şu şekilde yazmalıydık : formik.HandleSubmit
+  const{ handleSubmit, handleChange, values} = useFormik({
+    initialValues: {
+      firstName: 'Huzeyfe',
+      lastName: 'Yetkiner',
+      email: 'yetkinerhuzeyfe@gmail.com',
+      gender: 'male',
+      hobbies: [],
+      country: "Turkey",
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
     <div className="App">
       <h1>Sign Up</h1>
+      <form onSubmit={handleSubmit}>
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" name='firstName' value={values.firstName} onChange={handleChange} />
+
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" name='lastName' value={values.lastName} onChange={handleChange} />
+
+              <label htmlFor="email">Email</label>
+              <input type="email" name='email' value={values.email} onChange={handleChange}/>
+
+              <br /><br />
+
+              <label htmlFor="">Gender</label> <br />
+              <span>Male</span>
+              <input type="radio" name='gender' value={"male"} onChange={handleChange} checked={values.gender === "male"}/>
+              <span>Female</span>
+              <input type="radio" name='gender' value={"female"} onChange={handleChange} checked={values.gender === "female"}/>
+
+              <br /><br />  
+              <div>
+                <span>Football</span>
+                <input type="checkbox" name="hobbies" value={"Football"} onChange={handleChange}/> <br />
+                <span>PC Games</span>
+                <input type="checkbox" name="hobbies" value={"PC Games"} onChange={handleChange}/> <br />
+                <span>Cinema</span>
+                <input type="checkbox" name="hobbies" value={"Cinema"} onChange={handleChange}/>
+              </div>
+
+
+              <br /><br />
+
+              <select name="country" onChange={handleChange} value={values.country}>                
+                <option value="Spain">Spain</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Holland">Holland</option>
+              </select>
+
+              <br /><br />
+
+              <button type="submit">Submit</button>
+              <br />
+              <br />
+              {
+                <code>{JSON.stringify(values)}</code>
+              }
+
+            </form>
+    </div>
+  );
+}
+
+export default App;
+
+// useFormik hooku olmadan olmadan formik kullanımı
+
+// import { Formik, Form } from 'formik';
+/* <h1>Sign Up</h1>
       <Formik
       initialValues={{
         firstName: 'Huzeyfe',
@@ -76,16 +147,13 @@ function App() {
         
       }
       
-    </Formik>
-    </div>
-  );
-}
+    </Formik> */
 
-export default App;
 
+/* ************ */
 
 // formik ile beraber gelen Field ve Form yapılarıyla beraber basit kullanımı
-{/* <Formik
+/* <Formik
       initialValues={{
         firstName: '',
         lastName: '',
@@ -111,4 +179,4 @@ export default App;
         />
         <button type="submit">Submit</button>
       </Form>
-    </Formik> */}
+    </Formik> */
