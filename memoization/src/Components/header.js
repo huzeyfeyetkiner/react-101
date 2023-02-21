@@ -1,11 +1,13 @@
 import React from "react";
 
-function Header({number}) {
+function Header({number, data}) {
 
     console.log("Header re-rendered");
   return (
     <div>
         <h1>Header - {number}</h1>
+        <br />
+        <code>{JSON.stringify(data)}</code>
     </div>
   )
 }
