@@ -1,36 +1,22 @@
-import { Route, Routes, NavLink } from "react-router-dom";
-import Users from "./components/users";
-import Signup from "./components/signup";
-import User from "./components/user";
+import { Route, Routes, NavLink } from "react-router-dom"
+
+import MainLayout from "./layouts/mainLayout";
+import Signup from "./Pages/signup";
+import Home from "./Pages/home";
 import "./App.css"
 
 function App() {
   return (
-    <div className="container">      
-      <div className="nav">
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/signup"}>Signup</NavLink>
-          </li>
-        </ul>
-      </div>
-    
-
-
-    {/* routing gözden geçirilecek */}
-
-    <Routes>
-      <Route path="/" element = { <Users /> } >
-        <Route path="/" element= { <User /> } />
-        <Route path="/:id" element= { <User /> } />
-      </Route>
-      <Route path="/signup" element ={ <Signup /> }/>
-    </Routes>
-
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={ <MainLayout /> } > 
+          <Route path="/home" element={ <Home /> } /> 
+          <Route path="/signup" element={ <Signup /> } /> 
+        </Route>
+        
+        
+      </Routes>
+    </>
   )
 }
 
