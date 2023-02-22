@@ -19,7 +19,9 @@ function App() {
       </div>
     
 
-  
+
+    {/* routing gözden geçirilecek */}
+
     <Routes>
       <Route path="/" element = { <Users /> } >
         <Route path="/" element= { <User /> } />
