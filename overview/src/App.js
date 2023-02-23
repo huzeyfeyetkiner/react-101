@@ -1,27 +1,26 @@
-import { Route, Routes, NavLink } from "react-router-dom"
-
-import MainLayout from "./layouts/mainLayout";
-import Signup from "./Pages/signup";
-import Home from "./Pages/home";
+import { Route, Routes } from "react-router-dom"
 import "./App.css"
-import Users from "./Pages/users";
-import Products from "./Pages/products";
+import Main from "./Layout/main";
+import Users from "./pages/users.js";
+import Signup from "./pages/signup";
+import User from "./components/user";
+
 
 function App() {
   return (
-    <>
+    <div className="app">     
+
+
       <Routes>
-        <Route path="/" element={ <MainLayout /> } > 
-          <Route path="/home" element={ <Home /> } > 
-            <Route path="users" element={ <Users /> } /> 
-            <Route path="products" element={ <Products /> } /> 
-          </Route> 
-          <Route path="/signup" element={ <Signup /> } /> 
+        <Route path="/" element={ <Main /> } >
+         <Route path="/" element={ <Users /> } >  
+          <Route path=":id" element={ <User />} />
+         </Route>        
+         <Route path="/signup" element={ <Signup /> } />          
         </Route>
-        
-        
       </Routes>
-    </>
+
+    </div>
   )
 }
 
