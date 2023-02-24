@@ -1,5 +1,6 @@
 import Header from "./header"
 import Button from "./button"
+import Profile from "./profile"
 import { useContext } from "react"
 import ThemeContext from "../context/ThemeContext"
 
@@ -10,6 +11,8 @@ function Container() {
         <Header />
         <hr />
         <Button />
+        <hr />
+        <Profile />
     </div>
   )
 }
