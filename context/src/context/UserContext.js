@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const UserContext = createContext() 
 
@@ -17,4 +17,6 @@ export const UserProvider = ({children}) => {
     )
 }
 
-export default UserContext
+// custom context hook kuruyoruz bu sayede theme context içerisinde yaptığımızın aksine useContext hookunu ve UserContexti her kullanmak istediğimizde çağırmamız gerekmiyor. Oluşturduğumuz hook sayesinde contextimize ulaşabiliyoruz.
+export const useUser = () => useContext(UserContext)
+

@@ -1,11 +1,12 @@
-import UserContext from "../context/UserContext";
-import { useContext, useState } from "react";
+import { useUser } from "../context/UserContext";
+// custom context hooku import ediyoruz.
+import { useState } from "react";
 
 
 
 function Profile() {
 
-    const {user, setUser} = useContext(UserContext)
+    const {user, setUser} = useUser()
     const [loading, setLoading] = useState(false)
 
     const handleLogin = () => {
@@ -22,6 +23,10 @@ function Profile() {
         <br />
         {
             !user &&  <button onClick={handleLogin}>{!loading ? "Login" : "Loading..."}</button>
+        }
+
+        {
+            user &&  <button onClick={() => setUser(null)}>Logout</button>
         }
        
     </div>
