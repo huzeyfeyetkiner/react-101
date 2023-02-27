@@ -7,7 +7,8 @@ const WeatherContext = createContext()
 export const WeatherProvider = ({children}) => {
 
     // API key from openweathermap
-    const key = "d6f16a77953c45078bd154119231902"
+    const key = "" //buraya api üzerinden veriyi çekmek için gerekli olan key girilecek
+    // kendi api keyim limite ulaştığı için kullanmıyorum.
     const [selectedCity, setSelectedCity] = useState("İstanbul")
     const [weathers, setWeathers] = useState([])   
 
@@ -41,6 +42,7 @@ export const WeatherProvider = ({children}) => {
     )
 }
 
+// custom hook / contexte ulaşmak için yazılan custom hook
 export const useWeather = () => {
     return useContext(WeatherContext)
 }

@@ -36,6 +36,3 @@ function Content() {
 }
 export default Content
 
-//   <br />
-
-// { }°C - {item.day["mintemp_c"]}°C
