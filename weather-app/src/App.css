@@ -1,4 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  font-size: 10px;
+}
+
 .App {
   text-align: center;
 }
 
+.dropdown {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.dropdown select{
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.condition img {
+  margin: 0px auto;
+  display: block;
+}
+
+.content ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.content ul li {
+  border: 1px solid rgba(0, 0, 0, 0.048);
+  padding: 2rem;
+  display: flex;
+}
+
+.content ul li:first-child{
+  background-color: antiquewhite  ;
+}
+
+
+
+.max {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.min {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.8;
+}

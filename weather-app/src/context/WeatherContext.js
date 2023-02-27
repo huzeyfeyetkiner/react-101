@@ -7,25 +7,26 @@ const WeatherContext = createContext()
 export const WeatherProvider = ({children}) => {
 
     // API key from openweathermap
-    const key = "52cb0c406e77c3b4de742e25be54c7f0"
+    const key = "d6f16a77953c45078bd154119231902"
     const [selectedCity, setSelectedCity] = useState("İstanbul")
-    const [weathers, setWeathers] = useState([])
-
-    const selected = cities.filter((city) => city.name === selectedCity )[0]
-    // console.log(selected.id)
-
-   
+    const [weathers, setWeathers] = useState([])   
 
    useEffect(() => {
+    //api üzerinden veriyi, seçilen şehrin adına göre almak için yazıldı.
+    const selected = cities.filter((city) => city.name === selectedCity )[0]
+
+    // hava durumu bilgilerini api üzerinden axios ile çekmek için kullanılan fonksiyon
     const getData = async() => {
-        const { data } = await axios(`https://api.openweathermap.org/data/3.0/onecall?lat=${selected.latitude}&lon=${selected.longitude}&exclude={part}&appid=${key}`)
+        const { data } = await axios(`http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${selected.name}&days=7&aqi=no&alerts=no`)
 
-        console.log(data)
-    }
+        setWeathers(data.forecast.forecastday)
+        
+    }    
     getData()
-   },[])
+    // console.log(weathers);
+   },[selectedCity]) 
     
-
+    // context içerisinden diğer componentlardan ulaşılmasını istediğim veriler.
     const values = {
         cities,
         selectedCity,

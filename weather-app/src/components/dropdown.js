@@ -10,7 +10,7 @@ function Dropdown() {
     
     
     return (
-        <div>
+        <div className="dropdown">
             <select name="" id="" defaultValue={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                 {
                     cities.map((city) => {
