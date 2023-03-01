@@ -1,15 +1,17 @@
-import { init } from "../socketApi"
-import { useEffect } from "react"
+import {  send } from "../socketApi"
+import {  useState } from "react"
 
-function Palette() {
+function Palette({activeColor}) {
 
-  useEffect(() => {
-    init()
-  },[])
+  const [color, setColor] = useState("#000")
+  // color inputundan gelen veriyi tutacak state
+
   return (
     <div className="palette">
-        <input type="color" name="" id="" />
-        <button>Click</button>
+      <h1>{activeColor}</h1>
+        <input type="color" value={activeColor} onChange={(e) => setColor(e.target.value)}/>
+        <button onClick={() => send(color)}>Click</button>
+        {/* onClick fonksiyonu içerisindeki send fonksiyonu ile backende iligli veriyi gönderiyoruz. */}
     </div>
   )
 }
