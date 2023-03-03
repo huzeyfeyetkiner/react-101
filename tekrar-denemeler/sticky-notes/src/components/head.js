@@ -8,6 +8,7 @@ function Head() {
 
     const addSticky = () => {
       setNotes([...notes,note])
+      setNote("")
     }
 
     useEffect(() => {
