@@ -1,0 +1,48 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+html {
+  font-size: 10px;
+}
+
+
+#selection {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.weathers-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.weathers-list li {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weathers-list li:first-child {
+  background-color: antiquewhite;
+}
+
+.weathers-list li span {
+  display: block;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+.max-temp {
+  font-weight: 600;
+}
