@@ -1,9 +1,9 @@
 import style from "./style.module.css"
 
 
-function ChatItem() {
+function ChatItem({message}) {
   return (
-    <div className={style.chatItem}>ChatItem</div>
+    <div className={`${style.chatItem} ${message.fromMe ? style.right : ""}`}>{message.message}</div>
   )
 }
 export default ChatItem
