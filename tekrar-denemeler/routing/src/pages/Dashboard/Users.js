@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { Outlet, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from "axios"
 function Users() {
 
   const [users, setUsers] = useState([])
-  const navigate = useNavigate()
+
   useEffect(() => {
 
     const getData = async() => {
@@ -17,18 +17,21 @@ function Users() {
 
   return (
     <div>
-      <ul>
-        {
-          users.map((user) => {
-            return(
-              <li key={user.id} onClick={() => navigate(`${user.id}`)}>{user.name}</li>
-            )
-          })
-        }
-      </ul>
+        <ul>
+          {
+            users.map((user) => {
+              return(
+                <li key={user.id}>
+                  <Link  to={`${user.id}`} state={user}>{user.name}</Link>     
+                </li>
+                            
+                
+              )
+            })
+          }  
+        </ul>
+        
       
-
-      <Outlet />
     </div>
   )
 }
