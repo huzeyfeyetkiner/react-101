@@ -1,0 +1,17 @@
+.App {
+  
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header-menu > ul {
+  display: flex;
+  column-gap: 2%;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
