@@ -11,9 +11,7 @@ function Header() {
 
         <ul>
             {/* navigate fonksiyonuna -1 parametresini verdiğimizde bir önceki sayfaya döner */}
-            <li onClick={() => navigate(-1)}>
-                geri
-            </li>
+            <li onClick={() => navigate(-1)}>geri</li>
             <li>
                 <Link to={"/"}>Anasayfa</Link>
             </li>
@@ -23,7 +21,7 @@ function Header() {
             <li>
                 <Link to={"contact"}>İletişim</Link>
             </li>
-            <li onClick={() => navigate("contact")}>İletişim(test)</li>
+            {/* <li onClick={() => navigate("contact")}>İletişim(test)</li> */}
         </ul>
 
     </div>
