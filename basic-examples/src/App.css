@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+
 }
 
 .btn-container {
@@ -50,7 +51,7 @@
 
 .accordion-content {
   background-color: antiquewhite;
-  transition: all 1s ease-out;
+  padding: 1%;
 }
 
 
