@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 10px;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+}
+
+
+.review-container {
+  padding: 2rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+}
+
+.img-container {
+  position: relative;
+}
+
+.quote {
+  z-index: 3;
+  position: absolute;
+  background-color: #645cff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.img-container img {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px -11px 0px -4px rgba(100,92,255,1);
+  -moz-box-shadow: 10px -11px 0px -4px rgba(100,92,255,1);
+  box-shadow: 10px -11px 0px -4px rgba(100,92,255,1);
+}
+
+.name {
+  text-transform: capitalize;
+  font-size: 2.4rem;
+}
+
+.title {
+  color: #645cff;
+  font-size: 1.6rem;
+}
+
+.text {
+  color: rgba(0, 0, 0, 0.658);
+  line-break: strict;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.btn-change {
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 3rem;
+  border: none;
+  color: #645cff;
+}
+
+.btn-suprise {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  background-color: #c1beef;
+  color: #645cff;
+  font-weight: 600;
+  transition: 0.5s all ease-in;
+}
+
+.btn-suprise:hover {
+  background-color: #5d53e9;
+  color: #fff;
+}
