@@ -23,19 +23,34 @@ html{
 }
 
 .card-container{
+  position: relative;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.116);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 0rem;
   border-radius: 0.25rem;
 }
 
+.info-container {
+  padding: 2rem;
+}
+
+.underline {
+  width: 8rem;
+  height: 0.4rem;
+  background-color: #10b981;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
+
 .price {
-  position: absolute;
+  position:absolute;
+  right: 0;
   background-color: #10b981;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
+  font-size: 1.6rem;
 }
 
 .img-container img {
@@ -45,7 +60,7 @@ html{
 }
 
 .card-container > h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .tour-info {
@@ -66,6 +81,22 @@ html{
 
 .delete:hover{
   background-color: #10b981;
+  color: #fff;
+}
+
+.btn-show {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #10b981;
+}
+
+.btn-refresh {
+  background-color: #10b981;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
   color: #fff;
 }
 
