@@ -1,38 +1,97 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 10px;
+}
+
+.App{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tour-cards {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  row-gap: 2rem;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.card-container{
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.price {
+  position: absolute;
+  background-color: #10b981;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: 30rem;
+  object-fit:cover;
+}
+
+.card-container > h2 {
+  font-size: 2rem;
+}
+
+.tour-info {
+  font-size: 1.4rem;
+}
+
+.delete {
+  display: block;
+  width: 80%;
+  padding: 1rem 0;
+  background-color: transparent;
+  border: 1px solid #10b981;
+  color: #10b981;
+  cursor: pointer;
+  margin: 2rem auto 0 auto;
+  transition: all 0.5s ease-in;
+}
+
+.delete:hover{
+  background-color: #10b981;
+  color: #fff;
+}
+
+@media screen and (min-width:900px) {
+  .tour-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card-container {
+    width: 25%;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .card-container > h2 {
+    font-size: 2.5rem;
+  }
+
+  .tour-info {
+    font-size: 1.6rem;
   }
 }
