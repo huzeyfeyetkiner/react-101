@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+.App {
+  height: 100vh;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header > h1 {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 5%;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2%;
+}
+
+.nav-buttons > button {
+  background-color: #f59e0b;
+  border: none;
+  color: #fff;
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  box-shadow: 10px 10px 35px -26px rgba(0,0,0,0.75);
+  transition: 0.5s ease-in all;
+}
+
+.nav-buttons > button:hover {
+  background-color: #a16805;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  box-shadow: 10px 10px 35px -26px rgba(0,0,0,0.75);
+  margin: 2%;
+}
+
+.img-container img{
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.context-header {
+  margin-top: 1%;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.context-header > h1 {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.desc {
+  padding: 2rem 2rem;
+  font-size: 1.6rem;
+}
+
+.btn-price {
+  background-color: #f59e0b;
+  color: #fff;
+  border: none;
+  width: 8rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  box-shadow: 10px 10px 35px -26px rgba(0,0,0,0.75);;
+}
+
+
+@media screen and (min-width: 600px) {
+
+  .header > h1{
+    margin: 2%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-list {
+    margin-top: 1%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .menu-item-container {
+    align-self: flex-start;
+    justify-self:flex-start ;
+    width: 40%;
+  }
+
+  .img-container {
+    background-color: aqua;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 30rem;
+    object-fit:cover;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header > h1{
+    margin: 1%;
+  }
+  
+  .menu-item-container {
+    width: 25%;
+  }
+
+}
