@@ -28,7 +28,8 @@ body {
 
 .tabs-container > button {
   background-color: transparent;
-  border: 2px solid transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
   font-weight: 500;
   font-size: 1.6rem;
   cursor: pointer;
@@ -86,9 +87,51 @@ span.dates {
 }
 
 .icon {
-  color: #14b8a6;
-  font-size: 6rem;
   margin-right: 5rem;
+  color: #14b8a6;
+  font-size: 3rem !important;
 }
 
+@media screen and (min-width: 800px) {
 
+  .App {
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content: flex-start;
+    padding: 4rem;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: flex-end;
+    margin-left: 10%;
+  }
+
+  .context-container {
+    position: absolute;
+    width: 60%  !important;
+  }
+
+  .active {
+    padding-left: 2rem;
+    color: #14b8a6;
+    border: none !important;
+    border-left: 2px solid #14b8a6 !important;
+  }
+
+  .tabs-container > button {
+    padding-left: 2rem;
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid transparent;    
+  }
+
+  .tabs-container > button:hover {
+    padding-left: 2rem;
+    color: #14b8a6;
+    border-left: 2px solid #14b8a6;
+    border-bottom: none !important;
+  }
+
+}

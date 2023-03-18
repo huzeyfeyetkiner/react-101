@@ -46,7 +46,7 @@ function App() {
         }
       </div>
 
-      <div className="context-container">
+      <div>
         <Context job={experience[jobValue]} />  
       </div> 
 
