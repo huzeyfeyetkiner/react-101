@@ -59,11 +59,20 @@ form > button {
 }
 
 .color-container {
+  position: relative;
   width: 12.5%;
   padding: 2rem 0rem;
+  cursor: pointer;
 }
 
 .color-container > p {
   margin-left: 5%;
   font-size: 1.2rem;
+}
+
+.alert {
+  text-transform: uppercase;
+  font-size: 0.80rem;
+  margin-top: 0.5rem;
+  position: absolute;
 }
