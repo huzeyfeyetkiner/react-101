@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+.App {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  row-gap: 2%;
+}
+
+.App > h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.generator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10%;
+}
+
+.generator > label {
+  font-size: 2rem;
+}
+
+.generator > input[type="number"] {
+  width: 4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #cbd5e1;
+}
+
+.generator > button {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #10b981;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 10px 10px 22px -10px rgba(0,0,0,0.75);
+  transition: all 0.5s ease-in;
+}
+
+.generator > button:hover {
+  background-color: #11996c;
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-size: 1.6rem;
+}
