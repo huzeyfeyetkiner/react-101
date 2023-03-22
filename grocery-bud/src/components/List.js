@@ -2,11 +2,11 @@ import { useList } from "../context/ListContext"
 
 function List() {
 
-    const { list, setList } = useList()
+    const { list, setList, setEdit, setEditID } = useList()
+
   return (  
     <ul className="list">
         {
-
             list.map((item, index) => {
                 if(item.completed === false) {
                     return(
@@ -21,7 +21,13 @@ function List() {
 
                                 <span>{item.title}</span>
                                 <div className="buttons">
-                                    <button className="btn-edit">Edit</button>
+                                    <button 
+                                    className="btn-edit"
+                                    onClick={() => {
+                                        setEdit(true)
+                                        setEditID(index)
+                                    }}
+                                    >Edit</button>
 
                                     <button 
                                     className="btn-del"
@@ -49,14 +55,14 @@ function List() {
                                 <span>{item.title}</span>
 
                                 <div className="buttons">
-                                    <button className="btn-edit">Edit</button>
+                                    <button className="btn-edit" disabled>Edit</button>
                                     <button 
                                     className="btn-del"
                                     onClick={() => {
                                         const newArray = list;
                                         newArray.splice(index,1)
                                         setList([...newArray])
-                                    }}>Delete</button>
+                                    }} disabled>Delete</button>
                                 </div>
                                 
                             </div>
