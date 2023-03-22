@@ -8,6 +8,7 @@ export function ListProvider({children}) {
     const [edit, setEdit] = useState(false) //edit yapılacak mı diye kontrol sağlayan state.
     const [editID, setEditID] = useState(null) //edit yapılacaksa hangi iteme edit yapılacağını belirleyen state.
 
+    // provider ile beraber children componentlere gönderilecek değerler
     const values = {
         list,
         setList,
@@ -24,9 +25,7 @@ export function ListProvider({children}) {
     )
 }
 
-
+// context içerisindeki değerleri componentler içerisinden daha kolay çağırmak için yazılmış custom hook
 export const useList = () => {
     return useContext(ListContext)
 }
-
-// export default ListProvider;

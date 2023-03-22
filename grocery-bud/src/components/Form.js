@@ -3,16 +3,21 @@ import { useList } from "../context/ListContext";
 
 
 function Form() {
+
+    // liste içerisine atılacak olan yazıyı tutmak için kullanılan state
     const [text, setText] = useState({completed: false, title:""})
 
+    // context içerisinden çekilen stateler
     const {list, setList, edit, editID, setEdit} = useList()
 
+    // listeye yeni bir eleman eklemek için yazılan fonksiyon
     const handleSubmit = (e) => {
         e.preventDefault()
         setList(prev => [...prev, text])
         setText({completed: false, title:""})
     }
 
+    //liste içerisindeki bir elemanın yeniden düzenlenmesini sağlayan fonksiyon
     const handleEdit = (e) => {
       e.preventDefault()
       setEdit(false)
@@ -23,8 +28,8 @@ function Form() {
     }    
 
   if(!edit) {
-    return (
-    
+    //default durumda gösterilecek olan form ekranıyla listeye eleman eklenmesi sağlanıyor
+    return (    
       <form className="form-container" onSubmit={handleSubmit}>
           <input 
           type="text" 
@@ -35,16 +40,16 @@ function Form() {
       </form>
     )
   }
-  else{
+  else{ // edit state'i true olduğu anda form edit yapmamızı sağlayan handleEdit fonksiyonu ile çalışıyor
     return (
-    
-      <form className="form-container" onSubmit={handleEdit}>
+      // edit formunda bazı css farkları olması için editting classı eklendi
+      <form className="form-container editting" onSubmit={handleEdit}>
           <input 
           type="text" 
           value={text.title} 
           onChange={(e) => setText({...text, title:e.target.value})}
           />
-          <button type="submit">Edit Item</button>
+          <button type="submit">Edit Item</button> 
       </form>
     )
   }

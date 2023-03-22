@@ -2,12 +2,14 @@ import { useList } from "../context/ListContext"
 
 function List() {
 
+    // context içerisinden component içinde lazım olan değerler/stateler.
     const { list, setList, setEdit, setEditID } = useList()
 
   return (  
     <ul className="list">
         {
             list.map((item, index) => {
+                // tamamlanan ve tamamlanmamış kısımları ayırmak için if bloğu ile koşullu render işlemi yapıldı
                 if(item.completed === false) {
                     return(
                         <li key={index}>
@@ -24,7 +26,7 @@ function List() {
                                     <button 
                                     className="btn-edit"
                                     onClick={() => {
-                                        setEdit(true)
+                                        setEdit(prev => !prev)
                                         setEditID(index)
                                     }}
                                     >Edit</button>
@@ -55,7 +57,13 @@ function List() {
                                 <span>{item.title}</span>
 
                                 <div className="buttons">
-                                    <button className="btn-edit" disabled>Edit</button>
+                                    <button 
+                                    className="btn-edit" 
+                                    onClick={() => {
+                                        setEdit(prev => !prev)
+                                        setEditID(index)
+                                    }}
+                                    disabled>Edit</button>
                                     <button 
                                     className="btn-del"
                                     onClick={() => {
