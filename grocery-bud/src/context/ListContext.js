@@ -4,9 +4,9 @@ const ListContext = createContext()
 
 export function ListProvider({children}) {
 
-    const [list, setList] = useState([])
-    const [edit, setEdit] = useState(false)
-    const [editID, setEditID] = useState(null)
+    const [list, setList] = useState([]) // grocery listemizi tutmak için kullanılacak state
+    const [edit, setEdit] = useState(false) //edit yapılacak mı diye kontrol sağlayan state.
+    const [editID, setEditID] = useState(null) //edit yapılacaksa hangi iteme edit yapılacağını belirleyen state.
 
     const values = {
         list,

@@ -5,18 +5,98 @@
 
 html {
   font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  height: 100vh;
+  background-color: #f8fafc;
+}
+
+.App {
+  width: 90vw;
+  height: 60vh;
+  margin: 10rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+  padding: 6rem 0rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App > h1 {
+  font-weight: 400;
+  margin-bottom: 2%;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container > input[type="text"] {
+  padding: 0.6rem;
+  width: 50%;
+  background-color: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.308);
+}
+
+.form-container > button {
+  padding: 0.8rem 1.4rem;
+  border: none;
+  background-color: #06b6d4;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+ul.list {
+  margin-top: 2%;
+  list-style-type: none;
+  width: 65vw;
+  
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  margin: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.list-item > span {
+  margin-left:1%;
+}
+
+.buttons {
+  margin-left: auto;  
+}
+
+.btn-edit, .btn-del {
+  border: none;
+  margin: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s ease-in;
+}
+
+.btn-edit:hover, .btn-del:hover {
+  background-color: #06b6d4;
+}
+
+.btn-edit {
+  background-color: black;
+}
+
+.btn-del {
+  background-color: red;
 }
 
 

@@ -20,7 +20,7 @@ function Form() {
         value={text.title} 
         onChange={(e) => setText({...text, title:e.target.value})}
         />
-        <button type="submit">Add</button>
+        <button type="submit">Add Item</button>
     </form>
   )
 }

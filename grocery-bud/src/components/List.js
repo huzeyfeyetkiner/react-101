@@ -13,8 +13,11 @@ function List() {
                         <div className="list-item">
                             <input type="checkbox" name="" id="" />
                             <span>{item.title}</span>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <div className="buttons">
+                                <button className="btn-edit">Edit</button>
+                                <button className="btn-del">Delete</button>
+                            </div>
+                            
                         </div>
                     </li>
                 )
