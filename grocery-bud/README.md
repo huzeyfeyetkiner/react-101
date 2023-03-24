@@ -1,6 +1,6 @@
 # Grocery-bud application from freecodecamp
 
-### contains add, edit, and delete funcitons 
+### contains add, edit, and delete funcitons also the data kept in localStorage
 
 ### whole part of the project written by me
 
