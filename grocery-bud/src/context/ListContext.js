@@ -1,10 +1,12 @@
-import {useContext, createContext, useState} from "react"
+import {useContext, createContext, useState, useEffect} from "react"
 
 const ListContext = createContext()
 
 export function ListProvider({children}) {
 
-    const [list, setList] = useState([]) // grocery listemizi tutmak için kullanılacak state
+    const local = localStorage.getItem("list")
+
+    const [list, setList] = useState(local ? JSON.parse(local) : []) // grocery listemizi tutmak için kullanılacak state
     const [edit, setEdit] = useState(false) //edit yapılacak mı diye kontrol sağlayan state.
     const [editID, setEditID] = useState(null) //edit yapılacaksa hangi iteme edit yapılacağını belirleyen state.
 
@@ -17,6 +19,11 @@ export function ListProvider({children}) {
         editID,
         setEditID
     }
+
+    //list her değiştiğinde localstorage üzerinde tutulan veri güncelleniyor
+    useEffect(() => {
+        localStorage.setItem("list",JSON.stringify(list))
+    },[list])
 
     return(
         <ListContext.Provider value={values}>
