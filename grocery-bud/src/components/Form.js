@@ -13,18 +13,26 @@ function Form() {
     // listeye yeni bir eleman eklemek için yazılan fonksiyon
     const handleSubmit = (e) => {
         e.preventDefault()
-        setList(prev => [...prev, text])
-        setText({completed: false, title:""})
+        if(text.title){
+          setList(prev => [...prev, text])
+          setText({completed: false, title:""})
+        }else {
+          alert("Enter a valid value")
+        }       
     }
 
     //liste içerisindeki bir elemanın yeniden düzenlenmesini sağlayan fonksiyon
     const handleEdit = (e) => {
       e.preventDefault()
       setEdit(false)
-      const newArray = list;
-      newArray[editID].title = text.title
-      setList([...newArray])
-      setText({completed: false, title:""})
+      if(text.title){
+        const newArray = list;
+        newArray[editID].title = text.title
+        setList([...newArray])
+        setText({completed: false, title:""})
+      }
+      // if bloğuyla beraber boş bir text ile editlenme işlemi yapılmasının önüne geçiliyor
+      
     }    
 
   if(!edit) {
