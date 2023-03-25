@@ -5,18 +5,22 @@ import { useEffect, useRef, useState } from "react";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
-  const linksContainerRef = useRef(null);
-  const linksRef = useRef(null);
+  const linksContainerRef = useRef(null); //links listesini içeren dive ulaşmak için kullanılan ref
+  const linksRef = useRef(null); // link listesini içeren dive ulaşmak için kullanılan ref
 
+  //   toggle state'ini değiştirmek için kullanılan fonksiyon
   const toggleLinks = () => {
     setToggle(!toggle);
   };
 
   useEffect(() => {
+    // listedeki elemanlara göre listenin height özelliğini öğreniyoruz
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (toggle) {
+      // toggle true döndürdüğünde navbardaki linkleri görünür kılıyoruz.
       linksContainerRef.current.style.height = `${linksHeight}px`;
     } else {
+      // toggle false iken links listesini içeren divin gözükmemesi için height özelliğini 0px
       linksContainerRef.current.style.height = "0px";
     }
   }, [toggle]);
