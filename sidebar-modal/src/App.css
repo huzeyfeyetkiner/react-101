@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f5f9;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #49a6e9;
+  border-radius: 0.25rem;
+  animation: zoom-out 3s infinite;
+}
+
+@keyframes zoom-out {
+  0% {
+    font-size: 2rem;
+  }
+  50% {
+    font-size: 4rem;
+  }
+  100% {
+    font-size: 2rem;
+  }
+}
+
+.modal-toggle {
+  background-color: #49a6e9;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.6rem 1rem;
+  position: fixed;
+  top: 50%;
+  left: 47%;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  display: none;
+}
+
+.show-modal {
+  display: block !important;
+}
+
+.close-modal {
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #842029;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-container {
+  position: relative;
+  width: 30rem;
+  text-align: center;
+  padding: 5rem;
+  background-color: #fff;
+  box-shadow: 7px 3px 31px -18px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar {
+  position: relative;
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close-sidebar {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #842029;
+  background-color: transparent;
+  border: none;
+}
+
+.sidebar-list {
+  padding-left: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+
+.sidebar-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.6rem;
+  padding: 0.6rem;
+}
+
+.sidebar-list > li > a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #334155;
+}
+
+.social-list {
+  position: absolute;
+  list-style-type: none;
+  display: flex;
+  column-gap: 1rem;
+  bottom: 2rem;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.social-list > li > a {
+  color: #49a6e9;
+}
