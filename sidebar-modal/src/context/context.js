@@ -1,12 +1,13 @@
 import { createContext, useContext, useState } from "react";
-import { links, social } from "../data.js";
+import { links, social } from "../data.js"; // sidebar için lazım olan verilerin çekildiği modül
 
 const SidebarContext = createContext();
 
 export const SidebarProvider = ({ children }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showModal, setShowModal] = useState(false); //modal yapısını kapatıp açmak için kullanılacak state
+  const [showSidebar, setShowSidebar] = useState(false); //sidebar yapısını kapatıp açmak için kullanılan state
 
+  // chlid componentlere provide edilecek olan değerler
   const values = {
     links,
     social,
@@ -21,4 +22,4 @@ export const SidebarProvider = ({ children }) => {
   );
 };
 
-export const useSidebar = () => useContext(SidebarContext);
+export const useSidebar = () => useContext(SidebarContext); // contextin sağladığı verilere ulaşmak için componentler içerisinde kullanılacak custom hook
