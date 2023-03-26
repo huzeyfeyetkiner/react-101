@@ -3,13 +3,17 @@ import { FaTimes } from "react-icons/fa";
 import { useSidebar } from "../context/context";
 
 function Sidebar() {
-  const { links, social } = useSidebar();
+  const { links, social, showSidebar, setShowSidebar } = useSidebar();
+
+  const handleCloseSidebar = () => {
+    setShowSidebar(false);
+  };
 
   return (
-    <div className={`sidebar show-sidebar`}>
+    <div className={`sidebar ${showSidebar ? "show-sidebar" : ""}`}>
       <div className="sidebar-header">
         <img src={logo} alt="logo-img" />
-        <button className="close-sidebar">
+        <button className="close-sidebar" onClick={handleCloseSidebar}>
           <FaTimes />
         </button>
       </div>

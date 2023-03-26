@@ -80,12 +80,24 @@ body {
   width: 20%;
   height: 100vh;
   background-color: #fff;
+  transform: translate(-100%);
+  transition: 0.3s linear all;
+}
+
+.show-sidebar {
+  transform: translate(0);
 }
 
 .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem;
+}
+
+.sidebar-header > img {
+  cursor: pointer;
+  width: 60%;
 }
 
 .close-sidebar {
@@ -98,11 +110,10 @@ body {
 }
 
 .sidebar-list {
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  row-gap: 1.2rem;
 }
 
 .sidebar-list > li {
@@ -111,6 +122,12 @@ body {
   justify-content: flex-start;
   font-size: 1.6rem;
   padding: 0.6rem;
+  cursor: pointer;
+  transition: 0.2s ease-in all;
+}
+
+.sidebar-list > li:hover {
+  background-color: #f1f5f9;
 }
 
 .sidebar-list > li > a {
