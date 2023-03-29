@@ -23,7 +23,7 @@ function Sidebar() {
               <div className="sidebar-sublinks">
                 {links.map((item, index) => {
                   return (
-                    <a href={item.url}>
+                    <a key={index} href={item.url}>
                       {item.icon} {item.label}
                     </a>
                   );

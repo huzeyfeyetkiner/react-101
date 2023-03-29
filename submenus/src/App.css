@@ -324,6 +324,7 @@ Stripe Styles
   visibility: visible;
   z-index: 2;
   transform: scale(1);
+  /* transform scale ile beraber toggle özelliği eklendi */
 }
 .sidebar {
   width: 90vw;

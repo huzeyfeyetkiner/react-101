@@ -4,7 +4,7 @@ import phoneImg from "../images/phone.svg";
 function Hero() {
   const { closeSubmenu } = useAppContext();
   return (
-    <section className="hero">
+    <section className="hero" onMouseOver={closeSubmenu}>
       <div className="hero-center">
         <article className="hero-info">
           <h1>Payment Processing Platform for the Internet</h1>
