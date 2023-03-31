@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useContext,
-  useReducer,
-  useEffect,
-  createContext,
-} from "react";
+import React, { useContext, useReducer, useEffect, createContext } from "react";
 import cartItems from "./data";
 import reducer from "./reducer";
 
@@ -12,7 +6,7 @@ const url = "https://course-api.com/react-useReducer-cart-project";
 const AppContext = createContext();
 
 const initialState = {
-  loading: false,
+  loading: true,
   cart: cartItems,
   total: 0,
   amount: 0,
@@ -37,6 +31,29 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "DECREASE", payload: id });
   };
 
+  const fetchData = async () => {
+    // initialState içerisinde loading: true yaptığum için loading actionuna gerek kalmadı
+    // dispatch({ type: "LOADING" }); //fetching yapılırken ekranda loading gözükmesini sağlayan action type
+    const response = await fetch(url);
+    const items = await response.json();
+    dispatch({ type: "DISPLAY", payload: items }); // fetching işlemi bittikten sonra reducer üzerindeki display actionunu harekete geçiriyoruz.
+  };
+
+  // tek bir action ile increase ve decrease işlemlerinin yapılmasını sağlayan fonksiyon
+  const toggleAmount = (id, type) => {
+    dispatch({ type: "TOGGLE", payload: { id, type } });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // cart üzerinde herhangi bir değişiklik olduğunda
+  useEffect(() => {
+    console.log("cart changed");
+    dispatch({ type: "GET_TOTAL" });
+  }, [state.cart]);
+
   return (
     <AppContext.Provider
       value={{
@@ -45,6 +62,7 @@ const AppProvider = ({ children }) => {
         removeItem,
         increase,
         decrease,
+        toggleAmount,
       }}
     >
       {children}
