@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: aqua;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li {
+  margin: 0.4rem;
+}
+
+ul > li > div {
+  padding: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: bisque;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.delete {
+  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+ul > li > div:hover .delete {
+  visibility: visible;
+}
