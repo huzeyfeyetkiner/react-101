@@ -4,7 +4,7 @@ import { useState } from "react";
 import List from "./components/List";
 
 function App() {
-  const [filtered, setFiltered] = useState("All");
+  const [filtered, setFiltered] = useState("all");
 
   return (
     <div className="App">

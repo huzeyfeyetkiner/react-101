@@ -9,7 +9,7 @@ function List({ filtered, menu }) {
   }
 
   return (
-    <div>
+    <div className="menu-list">
       {filteredMenu.map((item) => {
         return <Item item={item} />;
       })}
