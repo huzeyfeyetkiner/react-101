@@ -28,17 +28,23 @@ function SideBar() {
 					onChange={(e) => setSearch(e.target.value)}
 				/>
 			</div>
-			{users.map((user) => {
-				return (
-					<Link
-						className="text-white hover:bg-gray-50 hover:text-slate-500 rounded-md py-3 px-6"
-						href={`/${user.id}`}
-						key={user.id}
-					>
-						{user.firstName}
-					</Link>
-				)
-			})}
+			{users.length > 0 &&
+				users.map((user) => {
+					return (
+						<Link
+							className="text-white hover:bg-gray-50 hover:text-slate-500 rounded-md py-3 px-6"
+							href={`/${user.id}`}
+							key={user.id}
+						>
+							{user.firstName}
+						</Link>
+					)
+				})}
+			{users.length < 1 && (
+				<div className="text-white py-3 px-6 ">
+					There is no result...
+				</div>
+			)}
 		</div>
 	)
 }
