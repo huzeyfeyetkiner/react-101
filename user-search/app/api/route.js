@@ -15,3 +15,12 @@ export async function getUser(id) {
 
 	return res.json()
 }
+
+export async function searchUsers(search) {
+	const res = await fetch(`https://dummyjson.com/users/search?q=${search}`)
+	if (!res.ok) {
+		throw new Error("Failed to fetch data")
+	}
+
+	return res.json()
+}
