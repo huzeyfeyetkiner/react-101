@@ -6,7 +6,7 @@ export default async function User({ params: { user } }) {
 	const data = await getUser(user)
 
 	return (
-		<div className="flex flex-row items-center p-12">
+		<div className="sticky top-0 flex mobile:flex-col sm:flex-row items-center p-4">
 			<div>
 				<Image
 					loading="lazy"

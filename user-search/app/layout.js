@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={`${inter.className} flex flex-row`}>
 				<SideBar />
-				<div>{children}</div>
+				<div className="mobile:justify-center sm:justify-start">
+					{children}
+				</div>
 			</body>
 		</html>
 	)
